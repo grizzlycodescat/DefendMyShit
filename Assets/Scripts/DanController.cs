@@ -9,6 +9,7 @@ public class DanController : MonoBehaviour
     public float runSpeed = 40f;
     float horizontalMove = 0f;
     bool jump = false;
+    public Animator animator;
     // Start is called before the first frame update
     // void Start()
     // {
@@ -19,6 +20,8 @@ public class DanController : MonoBehaviour
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
         if(Input.GetButtonDown("Jump")) {
             jump = true;
