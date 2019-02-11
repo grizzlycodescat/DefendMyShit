@@ -5,7 +5,6 @@ using UnityEngine;
 public class DanController : MonoBehaviour
 {
     public CharacterController2D controller;
-
     public float runSpeed = 40f;
     float horizontalMove = 0f;
     bool jump = false;
@@ -25,7 +24,12 @@ public class DanController : MonoBehaviour
 
         if(Input.GetButtonDown("Jump")) {
             jump = true;
+            animator.SetBool("isJumping",true);
         }
+    }
+
+    public void onLanding() {
+        animator.SetBool("isJumping", false);
     }
 
     void FixedUpdate() {

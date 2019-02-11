@@ -9,7 +9,8 @@ public class SpawnEnemy : MonoBehaviour
     Vector2 whereToSpawn;
     public float spawnRate = 2f;
     float nextSpawn = 0f;
-
+    int spawnMax = 5;
+    int spawned = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,11 @@ public class SpawnEnemy : MonoBehaviour
             nextSpawn = Time.time + spawnRate;
             randX = Random.Range(15f,20f);
             whereToSpawn = new Vector2 (randX, transform.position.y);
-            Instantiate(enemy,whereToSpawn,Quaternion.identity);
+            //spawn 5 NPC's when the level starts. 
+            if(spawned < spawnMax) {
+                Instantiate(enemy,whereToSpawn,Quaternion.identity);
+                spawned++;
+            } 
         }
     }
 }
