@@ -290,6 +290,7 @@ GameObject:
   - component: {fileID: 177257704}
   - component: {fileID: 177257703}
   - component: {fileID: 177257705}
+  - component: {fileID: 177257706}
   m_Layer: 0
   m_Name: bed
   m_TagString: Bed
@@ -321,7 +322,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.020147085, y: -0.5677011}
@@ -406,6 +407,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!95 &177257706
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177257701}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0ea21a8d216ad4084aeb4588e165daef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &366644492
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +444,7 @@ GameObject:
   - component: {fileID: 366644500}
   - component: {fileID: 366644501}
   m_Layer: 0
-  m_Name: MainChar
+  m_Name: Dan
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -501,7 +521,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: ec0e5134853a047d3aa49f4ac84e4a61, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -539,10 +559,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.052358627, y: 0.14465082}
+  m_Offset: {x: 0.020511389, y: 0.113420606}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -553,7 +573,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8321619, y: 1.2639134}
+  m_Size: {x: 0.43658113, y: 1.201453}
   m_EdgeRadius: 0
 --- !u!50 &366644498
 Rigidbody2D:
@@ -798,6 +818,7 @@ GameObject:
   - component: {fileID: 671229763}
   - component: {fileID: 671229765}
   - component: {fileID: 671229766}
+  - component: {fileID: 671229767}
   m_Layer: 0
   m_Name: minibar
   m_TagString: Untagged
@@ -877,7 +898,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -913,7 +934,26 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 3
+  m_Constraints: 7
+--- !u!95 &671229767
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671229762}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1f77cf3cab8d74cdbbf19a4c77ecee52, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &748319984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,6 +1399,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5130384279016981275, guid: 48759ef6023044766818ca4f47eff8e3,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.1377225
+      objectReference: {fileID: 0}
+    - target: {fileID: 5130384279016981275, guid: 48759ef6023044766818ca4f47eff8e3,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0888989
+      objectReference: {fileID: 0}
+    - target: {fileID: 5130384279016981275, guid: 48759ef6023044766818ca4f47eff8e3,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48759ef6023044766818ca4f47eff8e3, type: 3}
 --- !u!1 &1446714606
@@ -1486,7 +1541,7 @@ GameObject:
   m_Layer: 8
   m_Name: Origin Point
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

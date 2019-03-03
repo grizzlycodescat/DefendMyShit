@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SpawnEnemy : MonoBehaviour
 {
     public GameObject enemy;
@@ -11,10 +12,11 @@ public class SpawnEnemy : MonoBehaviour
     float nextSpawn = 0f;
     int spawnMax = 5;
     int spawned = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
