@@ -1,0 +1,95 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+
+public class TowelHeadController : EnemyController
+{
+    //origin point for raycast
+    public Transform originPoint;
+    //direction of movement
+    private Vector2 dir = new Vector2(-1,0);
+    //range for the raycast, speed for the movement speed of the enemy
+    public float range, speed;
+
+    //Rigidbody of the object this script is attached to
+    Rigidbody2D rb;
+    
+    //List of the propds that enemies have to interact with
+    GameObject bar,bed;
+
+    //
+    public GameObject towelHead;
+    int randNum;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        bar = GameObject.Find("minibar");
+        bed = GameObject.Find("bed");
+        rb = GetComponent<Rigidbody2D>();
+
+        randNum = Random.Range(1,3);
+        // Debug.Log(randNum);
+
+        if(randNum == 1) {
+            Debug.Log("left");
+        } if(randNum == 2) {
+            Flip(); 
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //Added debug line to view the ray being cast out, uncomment to see
+        // Debug.DrawRay(originPoint.position,dir * range);
+        RaycastHit2D hit = Physics2D.Raycast(originPoint.position,dir,range);
+
+        if(hit == true) {
+            Debug.Log(hit.collider.name);
+            if(hit.collider.name == bed.name) {
+                // Debug.Log(bed.name+ "," + hit.collider.name);
+                Flip();
+                speed *= -1;
+                dir *= -1;
+            }
+            if(hit.collider.name == bar.name) {
+                Flip();
+                speed *= -1;
+                dir *= -1;
+            }
+            if(hit.collider.name == "Dan") { 
+                Debug.Log(hit.collider.name + " has been hit");
+                //choice: Either attack him, or ignore him.
+                attackDan();
+            }
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if(randNum == 1) {
+            LeftMove();
+        } else {
+            RightMove();
+        }
+    }
+
+    void LeftMove() {
+        rb.velocity = new Vector2(-speed, rb.velocity.y);
+    }
+
+    void RightMove(){
+       rb.velocity = new Vector2(speed, rb.velocity.y);
+    }
+    void Flip() {
+        Vector3 hookriScale = transform.localScale;
+        hookriScale.x *= -1;
+        transform.localScale = hookriScale;
+    }
+    public void attackDan() {
+        Debug.Log("dan Has Been Attacked");
+        Destroy(towelHead);
+    }
+}

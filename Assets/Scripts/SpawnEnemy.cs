@@ -12,14 +12,14 @@ public class SpawnEnemy : MonoBehaviour
     float nextSpawn = 0f;
     int spawnMax = 5;
     int spawned = 0;
-
+    public int numOfEnemies;
     // Start is called before the first frame update
     void Start()
     {
 
     }
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
         if(Time.time > nextSpawn) {
@@ -32,5 +32,11 @@ public class SpawnEnemy : MonoBehaviour
                 spawned++;
             } 
         }
+    }
+
+    private int RandomNumGen(int max) {
+        int randNum = Random.Range(0, max);
+
+        return randNum;
     }
 }
